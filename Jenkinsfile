@@ -14,5 +14,11 @@ pipeline {
                 sh "python3 jenkinsTest.py"
             }
         }
+        stage('Test') {
+            steps {
+                sh 'pytest tests'
+            }
+        }
+
     }
 }
