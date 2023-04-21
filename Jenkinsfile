@@ -11,8 +11,7 @@ pipeline {
         }
         stage('Build and run') {
             steps {
-                sh "cd src"
-                sh "python3 mymodule.py"
+                sh "python3 ./src/mymodule.py"
             }
         }
         stage('Test') {
