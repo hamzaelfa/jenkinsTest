@@ -12,7 +12,7 @@ pipeline {
         stage('Build and run') {
             steps {
                 sh "cd src"
-                sh "python3 jenkinsTest.py"
+                sh "python3 mymodule.py"
             }
         }
         stage('Test') {
