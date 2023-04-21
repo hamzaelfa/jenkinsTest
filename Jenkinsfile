@@ -11,6 +11,7 @@ pipeline {
         }
         stage('Build and run') {
             steps {
+                sh "cd src"
                 sh "python3 jenkinsTest.py"
             }
         }
