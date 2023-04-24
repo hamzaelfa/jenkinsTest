@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'pip install pytest'
+                sh 'echo $PATH'
                 sh 'pytest tests'
             }
         }
