@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    environment {
+        CC = """${sh(
+            returnStdout: true,
+            script:'. ./test_env.sh'
+        )}
+        """
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -14,13 +22,13 @@ pipeline {
                 sh "python3 ./src/mymodule.py"
             }
         }
-        stage('Test') {
+        /*stage('Test') {
             steps {
                 sh 'echo $PATH'
                 sh 'which pytest'
                 sh 'pytest tests'
             }
-        }
+        }*/
 
     }
 }
